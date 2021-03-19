@@ -11,11 +11,13 @@ public class StreamFilter {
 
 		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40);
 
-		List<Integer> lowNumbers = numbers.stream().filter(num -> num < 10).collect(Collectors.toList());
+		List<Integer> lowNumbers = numbers.stream().filter(num -> num < 10)
+				.collect(Collectors.toList());
 		lowNumbers.forEach(System.out::println);
 
-		// Vamos a buscar el número 8
-		List<Integer> number8 = numbers.stream().filter(num -> num == 8).collect(Collectors.toList());
+		// Vamos a buscar el número 8 (Para este ejemplo sería mejor usar anyMatch())
+		List<Integer> number8 = numbers.stream().filter(num -> num == 8)
+				.collect(Collectors.toList());
 
 		if (!number8.isEmpty()) {
 			System.out.println("El número fue encontrado");
